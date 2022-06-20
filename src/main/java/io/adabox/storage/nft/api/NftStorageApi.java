@@ -42,14 +42,6 @@ public class NftStorageApi {
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 5XX </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
      */
     public okhttp3.Call deleteCall(String cid, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
@@ -102,14 +94,6 @@ public class NftStorageApi {
      * @param cid CID for the NFT (required)
      * @return DeleteResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 5XX </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
      */
     public DeleteResponse delete(String cid) throws ApiException {
         ApiResponse<DeleteResponse> localVarResp = deleteWithHttpInfo(cid);
@@ -122,14 +106,6 @@ public class NftStorageApi {
      * @param cid CID for the NFT (required)
      * @return ApiResponse&lt;DeleteResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 5XX </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
      */
     public ApiResponse<DeleteResponse> deleteWithHttpInfo(String cid) throws ApiException {
         okhttp3.Call localVarCall = deleteValidateBeforeCall(cid, null);
@@ -144,14 +120,6 @@ public class NftStorageApi {
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 5XX </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
      */
     public okhttp3.Call deleteAsync(String cid, final ApiCallback<DeleteResponse> _callback) throws ApiException {
 
@@ -167,14 +135,6 @@ public class NftStorageApi {
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 5XX </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
      */
     public okhttp3.Call listCall(OffsetDateTime before, Integer limit, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
@@ -230,14 +190,6 @@ public class NftStorageApi {
      * @param limit Max records to return (optional, default to 10)
      * @return ListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 5XX </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
      */
     public ListResponse list(OffsetDateTime before, Integer limit) throws ApiException {
         ApiResponse<ListResponse> localVarResp = listWithHttpInfo(before, limit);
@@ -251,14 +203,6 @@ public class NftStorageApi {
      * @param limit Max records to return (optional, default to 10)
      * @return ApiResponse&lt;ListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 5XX </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
      */
     public ApiResponse<ListResponse> listWithHttpInfo(OffsetDateTime before, Integer limit) throws ApiException {
         okhttp3.Call localVarCall = listValidateBeforeCall(before, limit, null);
@@ -274,14 +218,6 @@ public class NftStorageApi {
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 5XX </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
      */
     public okhttp3.Call listAsync(OffsetDateTime before, Integer limit, final ApiCallback<ListResponse> _callback) throws ApiException {
 
@@ -296,14 +232,6 @@ public class NftStorageApi {
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 5XX </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
      */
     public okhttp3.Call statusCall(String cid, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
@@ -356,14 +284,6 @@ public class NftStorageApi {
      * @param cid CID for the NFT (required)
      * @return GetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 5XX </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
      */
     public GetResponse status(String cid) throws ApiException {
         ApiResponse<GetResponse> localVarResp = statusWithHttpInfo(cid);
@@ -376,14 +296,6 @@ public class NftStorageApi {
      * @param cid CID for the NFT (required)
      * @return ApiResponse&lt;GetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 5XX </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
      */
     public ApiResponse<GetResponse> statusWithHttpInfo(String cid) throws ApiException {
         okhttp3.Call localVarCall = statusValidateBeforeCall(cid, null);
@@ -398,14 +310,6 @@ public class NftStorageApi {
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 5XX </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
      */
     public okhttp3.Call statusAsync(String cid, final ApiCallback<GetResponse> _callback) throws ApiException {
 
@@ -420,14 +324,6 @@ public class NftStorageApi {
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 5XX </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
      */
     public okhttp3.Call storeCall(File body, final ApiCallback _callback) throws ApiException, IOException {
         Object localVarPostBody = body;
@@ -481,14 +377,6 @@ public class NftStorageApi {
      * @param body  (required)
      * @return UploadResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 5XX </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
      */
     public UploadResponse store(File body) throws ApiException, IOException {
         ApiResponse<UploadResponse> localVarResp = storeWithHttpInfo(body);
@@ -501,14 +389,6 @@ public class NftStorageApi {
      * @param body  (required)
      * @return ApiResponse&lt;UploadResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 5XX </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
      */
     public ApiResponse<UploadResponse> storeWithHttpInfo(File body) throws ApiException, IOException {
         okhttp3.Call localVarCall = storeValidateBeforeCall(body, null);
@@ -523,14 +403,6 @@ public class NftStorageApi {
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 5XX </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
      */
     public okhttp3.Call storeAsync(File body, final ApiCallback<UploadResponse> _callback) throws ApiException, IOException {
 
