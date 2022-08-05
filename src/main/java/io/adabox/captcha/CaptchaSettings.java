@@ -23,6 +23,10 @@ public class CaptchaSettings {
         return site;
     }
 
+    /**
+     * setSite
+     * @param site site
+     */
     public void setSite(String site) {
         this.site = site;
     }
@@ -31,6 +35,10 @@ public class CaptchaSettings {
         return secret;
     }
 
+    /**
+     * setSecret
+     * @param secret secret
+     */
     public void setSecret(String secret) {
         this.secret = secret;
     }
@@ -51,6 +59,10 @@ public class CaptchaSettings {
         this.secretV3 = secretV3;
     }
 
+    /**
+     * getThreshold
+     * @return threshold
+     */
     public float getThreshold() {
         return threshold;
     }

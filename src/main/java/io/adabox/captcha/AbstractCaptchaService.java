@@ -9,22 +9,37 @@ import org.springframework.web.client.RestOperations;
 import javax.servlet.http.HttpServletRequest;
 import java.util.regex.Pattern;
 
+/**
+ * AbstractCaptchaService
+ */
 @Slf4j
 public abstract class AbstractCaptchaService implements ICaptchaService {
 
+    /**
+     * Http Servlet Request
+     */
     @Autowired
     protected HttpServletRequest request;
 
+    /**
+     * Captcha Settings
+     */
     @Autowired
     protected CaptchaSettings captchaSettings;
 
+    /**
+     * Re Captcha Attempt Service
+     */
     @Autowired
     protected ReCaptchaAttemptService reCaptchaAttemptService;
 
+    /**
+     * Rest Operations
+     */
     @Autowired
     protected RestOperations restTemplate;
 
-    protected static final Pattern RESPONSE_PATTERN = Pattern.compile("[A-Za-z0-9_-]+");
+    protected static final Pattern RESPONSE_PATTERN = Pattern.compile("[A-Za-z\\d_-]+");
 
     protected static final String RECAPTCHA_URL_TEMPLATE = "https://www.google.com/recaptcha/api/siteverify?secret=%s&response=%s&remoteip=%s";
 

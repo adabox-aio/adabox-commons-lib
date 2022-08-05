@@ -8,6 +8,9 @@ import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.web.client.RestOperations;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * CaptchaConfig
+ */
 @Configuration
 @ComponentScan(basePackages = { "io.adabox.captcha" })
 public class CaptchaConfig {

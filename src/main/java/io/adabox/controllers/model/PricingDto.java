@@ -6,16 +6,19 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-/**
- * Additional File Dto
- */
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class AdditionalFileDto {
+public class PricingDto {
 
-    private String name;
-    private String mediaType;
-    private String src;
+    private PricingPlanEnum plan;
+    private Long fixedPrice;
+    private MintingFeePayerEnum mintingFeePayer;
+    private String tokensPerStakeAddress;
+    private List<SaleConditionDto> conditions;
+    private List<BundleDto> bundle;
+    private List<DiscountConditionDto> discounts;
 }

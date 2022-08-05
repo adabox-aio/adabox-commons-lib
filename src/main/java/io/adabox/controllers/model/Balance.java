@@ -8,6 +8,9 @@ import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * Balance
+ */
 @Getter
 @Setter
 @NoArgsConstructor

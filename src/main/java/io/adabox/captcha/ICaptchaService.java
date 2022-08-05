@@ -8,6 +8,10 @@ public interface ICaptchaService {
 
     default void processResponse(final String response, String action) throws ReCaptchaInvalidException {}
 
+    /**
+     * get Re-Captcha Site
+     * @return recaptcha site
+     */
     String getReCaptchaSite();
 
     String getReCaptchaSecret();

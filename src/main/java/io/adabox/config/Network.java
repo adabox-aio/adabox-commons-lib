@@ -1,14 +1,28 @@
 package io.adabox.config;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public enum Network {
 
+    @JsonProperty("testnet")
     TEST_NET("testnet"),
+
+    @JsonProperty("mainnet")
     MAIN_NET("mainnet");
 
     private final String  value;
 
     Network(String value) {
         this.value = value;
+    }
+
+    public static Network fromString(String value) {
+        for (Network network : Network.values()) {
+            if (network.getValue().equalsIgnoreCase(value)) {
+                return network;
+            }
+        }
+        return TEST_NET;
     }
 
     public String getValue() {

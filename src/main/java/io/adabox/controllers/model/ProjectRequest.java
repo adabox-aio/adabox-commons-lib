@@ -2,6 +2,7 @@ package io.adabox.controllers.model;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
+import io.adabox.config.Network;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,5 +22,7 @@ public class ProjectRequest {
     private Long time;
     private boolean timeLocked;
     private String webhookUrl;
+    private Network network;
+    private PricingDto pricing;
 
 }

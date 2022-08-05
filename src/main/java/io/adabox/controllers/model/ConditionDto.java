@@ -6,16 +6,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-/**
- * Additional File Dto
- */
 @Getter
 @Setter
 @NoArgsConstructor
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class AdditionalFileDto {
+public class ConditionDto {
 
-    private String name;
-    private String mediaType;
-    private String src;
+    private ConditionEnum condition;
+    private String stakePools;
+    private Long minDelegationTime;
+    private String policies;
+    private Long minTokens;
+    private String whitelist;
 }
