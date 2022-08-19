@@ -6,7 +6,7 @@
 
     <groupId>io.adabox</groupId>
     <artifactId>commons-lib</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>adabox.io Commons Library</description>
     <url>https://github.com/adabox-aio/adabox-commons-lib</url>
@@ -22,11 +22,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>17</java.version>
         <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
-        <cardano-client-lib.version>0.3.0-beta2</cardano-client-lib.version>
-        <koios-java-client.version>1.13</koios-java-client.version>
-        <guava.version>31.1-jre</guava.version>
+        <cardano-client-lib.version>0.3.0-beta3-SNAPSHOT</cardano-client-lib.version>
         <annotations.version>23.0.0</annotations.version>
-        <lombok.version>1.18.24</lombok.version>
         <swagger-annotations.version>1.6.6</swagger-annotations.version>
         <gson-fire.version>1.8.5</gson-fire.version>
         <threetenbp.version>1.6.1</threetenbp.version>
@@ -61,34 +58,14 @@
         </dependency>
         <dependency>
             <groupId>com.bloxbean.cardano</groupId>
-            <artifactId>cardano-client-lib</artifactId>
-            <version>${cardano-client-lib.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.bloxbean.cardano</groupId>
             <artifactId>cardano-client-backend-koios</artifactId>
             <version>${cardano-client-lib.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.github.cardano-community</groupId>
-            <artifactId>koios-java-client</artifactId>
-            <version>${koios-java-client.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${guava.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
             <version>${annotations.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -105,10 +82,6 @@
             <groupId>org.threeten</groupId>
             <artifactId>threetenbp</artifactId>
             <version>${threetenbp.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.squareup.okhttp3</groupId>
-            <artifactId>okhttp</artifactId>
         </dependency>
     </dependencies>
 
@@ -237,4 +210,17 @@
             <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2</url>
         </repository>
     </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>snapshots-repo</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>

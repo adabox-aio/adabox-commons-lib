@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class ReCaptchaAttemptService {
 
     private final int MAX_ATTEMPT = 4;
-    private LoadingCache<String, Integer> attemptsCache;
+    private final LoadingCache<String, Integer> attemptsCache;
 
     public ReCaptchaAttemptService() {
         super();
