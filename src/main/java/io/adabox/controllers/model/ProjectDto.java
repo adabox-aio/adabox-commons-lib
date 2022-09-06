@@ -28,5 +28,7 @@ public class ProjectDto {
     private String webhookUrl;
     private Network network;
     private PricingDto pricing;
+    private Set<ProjectUserDto> members;
+    private Set<ProjectUserDto> pendingMembers;
 
 }

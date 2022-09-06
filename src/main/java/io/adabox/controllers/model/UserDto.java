@@ -47,4 +47,5 @@ public class UserDto {
 	@JsonIgnore
 	private boolean banned;
 	private Set<ProjectDto> projects = new HashSet<>();
+	private Set<NotificationDto> notifications;
 }

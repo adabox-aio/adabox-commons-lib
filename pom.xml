@@ -6,7 +6,7 @@
 
     <groupId>io.adabox</groupId>
     <artifactId>commons-lib</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>adabox.io Commons Library</description>
     <url>https://github.com/adabox-aio/adabox-commons-lib</url>
@@ -24,6 +24,7 @@
         <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
         <cardano-client-lib.version>0.3.0-beta3-SNAPSHOT</cardano-client-lib.version>
         <annotations.version>23.0.0</annotations.version>
+        <guava.version>31.1-jre</guava.version>
         <swagger-annotations.version>1.6.6</swagger-annotations.version>
         <gson-fire.version>1.8.5</gson-fire.version>
         <threetenbp.version>1.6.1</threetenbp.version>
@@ -48,11 +49,6 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <scope>compile</scope>
         </dependency>
@@ -60,7 +56,12 @@
             <groupId>com.bloxbean.cardano</groupId>
             <artifactId>cardano-client-backend-koios</artifactId>
             <version>${cardano-client-lib.version}</version>
-            <scope>provided</scope>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jetbrains</groupId>
