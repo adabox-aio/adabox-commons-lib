@@ -27,7 +27,7 @@
         <guava.version>31.1-jre</guava.version>
         <swagger-annotations.version>1.6.6</swagger-annotations.version>
         <gson-fire.version>1.8.5</gson-fire.version>
-        <threetenbp.version>1.6.1</threetenbp.version>
+        <threetenbp.version>1.6.2</threetenbp.version>
         <logging-interceptor.version>4.10.0</logging-interceptor.version>
         <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
