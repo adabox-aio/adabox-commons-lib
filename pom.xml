@@ -25,7 +25,7 @@
         <cardano-client-lib.version>0.3.0-beta3-SNAPSHOT</cardano-client-lib.version>
         <annotations.version>23.0.0</annotations.version>
         <guava.version>31.1-jre</guava.version>
-        <swagger-annotations.version>1.6.6</swagger-annotations.version>
+        <swagger-annotations.version>1.6.7</swagger-annotations.version>
         <gson-fire.version>1.8.5</gson-fire.version>
         <threetenbp.version>1.6.1</threetenbp.version>
         <logging-interceptor.version>4.10.0</logging-interceptor.version>
