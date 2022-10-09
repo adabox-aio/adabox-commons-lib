@@ -22,18 +22,15 @@ import java.util.Map;
 public class JSON {
     private Gson gson;
     private boolean isLenientOnJson = false;
-    private DateTypeAdapter dateTypeAdapter = new DateTypeAdapter();
-    private SqlDateTypeAdapter sqlDateTypeAdapter = new SqlDateTypeAdapter();
-    private OffsetDateTimeTypeAdapter offsetDateTimeTypeAdapter = new OffsetDateTimeTypeAdapter();
-    private LocalDateTypeAdapter localDateTypeAdapter = new LocalDateTypeAdapter();
-    private ByteArrayAdapter byteArrayAdapter = new ByteArrayAdapter();
+    private final DateTypeAdapter dateTypeAdapter = new DateTypeAdapter();
+    private final SqlDateTypeAdapter sqlDateTypeAdapter = new SqlDateTypeAdapter();
+    private final OffsetDateTimeTypeAdapter offsetDateTimeTypeAdapter = new OffsetDateTimeTypeAdapter();
+    private final LocalDateTypeAdapter localDateTypeAdapter = new LocalDateTypeAdapter();
+    private final ByteArrayAdapter byteArrayAdapter = new ByteArrayAdapter();
 
-    @SuppressWarnings("unchecked")
     public static GsonBuilder createGson() {
-        GsonFireBuilder fireBuilder = new GsonFireBuilder()
-        ;
-        GsonBuilder builder = fireBuilder.createGsonBuilder();
-        return builder;
+        GsonFireBuilder fireBuilder = new GsonFireBuilder();
+        return fireBuilder.createGsonBuilder();
     }
 
     private static String getDiscriminatorValue(JsonElement readElement, String discriminatorField) {
@@ -112,7 +109,6 @@ public class JSON {
      * @param returnType The type to deserialize into
      * @return The deserialized Java object
      */
-    @SuppressWarnings("unchecked")
     public <T> T deserialize(String body, Type returnType) {
         try {
             if (isLenientOnJson) {
@@ -137,7 +133,7 @@ public class JSON {
     /**
      * Gson TypeAdapter for Byte Array type
      */
-    public class ByteArrayAdapter extends TypeAdapter<byte[]> {
+    public static class ByteArrayAdapter extends TypeAdapter<byte[]> {
 
         @Override
         public void write(JsonWriter out, byte[] value) throws IOException {
@@ -377,5 +373,4 @@ public class JSON {
         sqlDateTypeAdapter.setFormat(dateFormat);
         return this;
     }
-
 }

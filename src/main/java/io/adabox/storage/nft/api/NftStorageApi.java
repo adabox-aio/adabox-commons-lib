@@ -18,7 +18,9 @@ import java.util.List;
 import java.util.Map;
 
 public class NftStorageApi {
+
     private ApiClient localVarApiClient;
+    private final String[] localVarAccepts = { "application/json" };
 
     public NftStorageApi() {
         this(Configuration.getDefaultApiClient());
@@ -39,53 +41,35 @@ public class NftStorageApi {
     /**
      * Build call for delete
      * @param cid CID for the NFT (required)
-     * @param _callback Callback for upload/download progress
+     * @param callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call deleteCall(String cid, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = null;
-
+    public okhttp3.Call deleteCall(String cid, final ApiCallback callback) throws ApiException {
         // create path and map variables
-        String localVarPath = "/{cid}"
-            .replaceAll("\\{" + "cid" + "\\}", localVarApiClient.escapeString(cid));
-
+        String localVarPath = "/{cid}".replaceAll("\\{" + "cid" + "\\}", localVarApiClient.escapeString(cid));
         List<Pair> localVarQueryParams = new ArrayList<>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<>();
         Map<String, String> localVarHeaderParams = new HashMap<>();
         Map<String, String> localVarCookieParams = new HashMap<>();
         Map<String, Object> localVarFormParams = new HashMap<>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
-
-        final String[] localVarContentTypes = {
-
-        };
+        final String[] localVarContentTypes = {};
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
-
         String[] localVarAuthNames = new String[] { "bearerAuth" };
-        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, null, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, callback);
     }
 
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteValidateBeforeCall(String cid, final ApiCallback _callback) throws ApiException {
-
+    private okhttp3.Call deleteValidateBeforeCall(String cid, final ApiCallback<DeleteResponse> callback) throws ApiException {
         // verify the required parameter 'cid' is set
         if (cid == null) {
             throw new ApiException("Missing the required parameter 'cid' when calling delete(Async)");
         }
-
-
-        okhttp3.Call localVarCall = deleteCall(cid, _callback);
-        return localVarCall;
-
+        return deleteCall(cid, callback);
     }
 
     /**
@@ -117,70 +101,53 @@ public class NftStorageApi {
      * Stop storing the content with the passed CID (asynchronously)
      * Stop storing the content with the passed CID on nft.storage. - Unpin the item from the underlying IPFS pinning service. - Cease renewals for expired Filecoin deals involving the CID.    ⚠️ This does not remove the content from the network.  - Does not terminate any established Filecoin deal. - Does not remove the content from other IPFS nodes in the network that already cached or pinned the CID.    Note: the content will remain available if another user has stored the CID with nft.storage.
      * @param cid CID for the NFT (required)
-     * @param _callback The callback to be executed when the API call finishes
+     * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call deleteAsync(String cid, final ApiCallback<DeleteResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = deleteValidateBeforeCall(cid, _callback);
+    public okhttp3.Call deleteAsync(String cid, final ApiCallback<DeleteResponse> callback) throws ApiException {
+        okhttp3.Call localVarCall = deleteValidateBeforeCall(cid, callback);
         Type localVarReturnType = new TypeToken<DeleteResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, callback);
         return localVarCall;
     }
+
     /**
      * Build call for list
      * @param before Return results created before provided timestamp (optional)
      * @param limit Max records to return (optional, default to 10)
-     * @param _callback Callback for upload/download progress
+     * @param callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call listCall(OffsetDateTime before, Integer limit, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = null;
-
+    public okhttp3.Call listCall(OffsetDateTime before, Integer limit, final ApiCallback<ListResponse> callback) throws ApiException {
         // create path and map variables
         String localVarPath = "/";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
+        List<Pair> localVarQueryParams = new ArrayList<>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<>();
+        Map<String, String> localVarHeaderParams = new HashMap<>();
+        Map<String, String> localVarCookieParams = new HashMap<>();
+        Map<String, Object> localVarFormParams = new HashMap<>();
         if (before != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("before", before));
         }
-
         if (limit != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
         }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
-
-        final String[] localVarContentTypes = {
-
-        };
+        final String[] localVarContentTypes = {};
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "bearerAuth" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, null, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, callback);
     }
 
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call listValidateBeforeCall(OffsetDateTime before, Integer limit, final ApiCallback _callback) throws ApiException {
-
-
-        okhttp3.Call localVarCall = listCall(before, limit, _callback);
-        return localVarCall;
-
+    private okhttp3.Call listValidateBeforeCall(OffsetDateTime before, Integer limit, final ApiCallback<ListResponse> callback) throws ApiException {
+        return listCall(before, limit, callback);
     }
 
     /**
@@ -215,67 +182,51 @@ public class NftStorageApi {
      *
      * @param before Return results created before provided timestamp (optional)
      * @param limit Max records to return (optional, default to 10)
-     * @param _callback The callback to be executed when the API call finishes
+     * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call listAsync(OffsetDateTime before, Integer limit, final ApiCallback<ListResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = listValidateBeforeCall(before, limit, _callback);
-        Type localVarReturnType = new TypeToken<ListResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+    public okhttp3.Call listAsync(OffsetDateTime before, Integer limit, final ApiCallback<ListResponse> callback) throws ApiException {
+        okhttp3.Call localVarCall = listValidateBeforeCall(before, limit, callback);
+        localVarApiClient.executeAsync(localVarCall, new TypeToken<ListResponse>(){}.getType(), callback);
         return localVarCall;
     }
+
     /**
      * Build call for status
      * @param cid CID for the NFT (required)
-     * @param _callback Callback for upload/download progress
+     * @param callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call statusCall(String cid, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = null;
-
+    public okhttp3.Call statusCall(String cid, final ApiCallback<GetResponse> callback) throws ApiException {
         // create path and map variables
         String localVarPath = "/{cid}"
             .replaceAll("\\{" + "cid" + "\\}", localVarApiClient.escapeString(cid));
-
         List<Pair> localVarQueryParams = new ArrayList<>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<>();
         Map<String, String> localVarHeaderParams = new HashMap<>();
         Map<String, String> localVarCookieParams = new HashMap<>();
         Map<String, Object> localVarFormParams = new HashMap<>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
-
         final String[] localVarContentTypes = {
 
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
-
         String[] localVarAuthNames = new String[] { "bearerAuth" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, null, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, callback);
     }
 
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call statusValidateBeforeCall(String cid, final ApiCallback _callback) throws ApiException {
-
+    private okhttp3.Call statusValidateBeforeCall(String cid, final ApiCallback<GetResponse> callback) throws ApiException {
         // verify the required parameter 'cid' is set
         if (cid == null) {
             throw new ApiException("Missing the required parameter 'cid' when calling status(Async)");
         }
-
-
-        okhttp3.Call localVarCall = statusCall(cid, _callback);
-        return localVarCall;
-
+        return statusCall(cid, callback);
     }
 
     /**
@@ -307,39 +258,28 @@ public class NftStorageApi {
      * Get information for the stored file CID (asynchronously)
      * Includes the IPFS pinning state and the Filecoin deal state.
      * @param cid CID for the NFT (required)
-     * @param _callback The callback to be executed when the API call finishes
+     * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call statusAsync(String cid, final ApiCallback<GetResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = statusValidateBeforeCall(cid, _callback);
+    public okhttp3.Call statusAsync(String cid, final ApiCallback<GetResponse> callback) throws ApiException {
+        okhttp3.Call localVarCall = statusValidateBeforeCall(cid, callback);
         Type localVarReturnType = new TypeToken<GetResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, callback);
         return localVarCall;
     }
     /**
      * Build call for store
      * @param body  (required)
-     * @param _callback Callback for upload/download progress
+     * @param callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call storeCall(File body, final ApiCallback _callback) throws ApiException, IOException {
-        Object localVarPostBody = body;
-
-        // create path and map variables
-        String localVarPath = "/upload";
-
-        List<Pair> localVarQueryParams = new ArrayList<>();
+    public okhttp3.Call storeCall(File body, final ApiCallback<UploadResponse> callback) throws ApiException, IOException {
         List<Pair> localVarCollectionQueryParams = new ArrayList<>();
         Map<String, String> localVarHeaderParams = new HashMap<>();
         Map<String, String> localVarCookieParams = new HashMap<>();
         Map<String, Object> localVarFormParams = new HashMap<>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
@@ -349,26 +289,18 @@ public class NftStorageApi {
         localVarContentTypesList.add(mimeType);
         localVarContentTypesList.add("application/octet-stream");
         localVarContentTypesList.add("multipart/form-data");
-
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypesList.toArray(new String[0]));
         localVarHeaderParams.put("Content-Type", localVarContentType);
-
         String[] localVarAuthNames = new String[] { "bearerAuth" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall("/upload", "POST", new ArrayList<>(), localVarCollectionQueryParams, body, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, callback);
     }
 
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call storeValidateBeforeCall(File body, final ApiCallback _callback) throws ApiException, IOException {
-
+    private okhttp3.Call storeValidateBeforeCall(File body, final ApiCallback<UploadResponse> callback) throws ApiException, IOException {
         // verify the required parameter 'body' is set
         if (body == null) {
             throw new ApiException("Missing the required parameter 'body' when calling store(Async)");
         }
-
-
-        okhttp3.Call localVarCall = storeCall(body, _callback);
-        return localVarCall;
-
+        return storeCall(body, callback);
     }
 
     /**
@@ -379,8 +311,7 @@ public class NftStorageApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public UploadResponse store(File body) throws ApiException, IOException {
-        ApiResponse<UploadResponse> localVarResp = storeWithHttpInfo(body);
-        return localVarResp.getData();
+        return storeWithHttpInfo(body).getData();
     }
 
     /**
@@ -400,15 +331,13 @@ public class NftStorageApi {
      * Store a file (asynchronously)
      * Store a file with nft.storage.  - Submit a HTTP &#x60;POST&#x60; request passing the file data in the request body. - To store multiple files in a directory, submit a &#x60;multipart/form-data&#x60; HTTP &#x60;POST&#x60; request.  Use the &#x60;Content-Disposition&#x60; header for each part to specify a filename.
      * @param body  (required)
-     * @param _callback The callback to be executed when the API call finishes
+     * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call storeAsync(File body, final ApiCallback<UploadResponse> _callback) throws ApiException, IOException {
-
-        okhttp3.Call localVarCall = storeValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<UploadResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+    public okhttp3.Call storeAsync(File body, final ApiCallback<UploadResponse> callback) throws ApiException, IOException {
+        okhttp3.Call localVarCall = storeValidateBeforeCall(body, callback);
+        localVarApiClient.executeAsync(localVarCall, new TypeToken<UploadResponse>(){}.getType(), callback);
         return localVarCall;
     }
 }

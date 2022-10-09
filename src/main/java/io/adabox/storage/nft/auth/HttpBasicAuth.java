@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 public class HttpBasicAuth implements Authentication {
+
     private String username;
     private String password;
 
@@ -31,8 +32,6 @@ public class HttpBasicAuth implements Authentication {
         if (username == null && password == null) {
             return;
         }
-        headerParams.put("Authorization", Credentials.basic(
-            username == null ? "" : username,
-            password == null ? "" : password));
+        headerParams.put("Authorization", Credentials.basic(username == null ? "" : username, password == null ? "" : password));
     }
 }

@@ -1,13 +1,12 @@
 package io.adabox.controllers.model;
 
+import com.bloxbean.cardano.client.transaction.spec.Policy;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
+import io.adabox.config.Network;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @Getter
 @Setter
@@ -16,6 +15,6 @@ import java.util.Set;
 public class PolicyWrapperDto {
 
     private String id;
-    private String policy;
-    private Set<MintAssetDto> assets = new HashSet<>();
+    private Policy policy;
+    private Network network;
 }

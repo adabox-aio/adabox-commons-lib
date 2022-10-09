@@ -21,101 +21,91 @@ import java.util.Objects;
 /**
  * ErrorResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-04-29T12:41:03.666Z[GMT]")
 public class ErrorResponse {
-  public static final String SERIALIZED_NAME_OK = "ok";
-  @SerializedName(SERIALIZED_NAME_OK)
-  private Boolean ok = false;
 
-  public static final String SERIALIZED_NAME_ERROR = "error";
-  @SerializedName(SERIALIZED_NAME_ERROR)
-  private ErrorResponseError error;
+    public static final String SERIALIZED_NAME_OK = "ok";
+    @SerializedName(SERIALIZED_NAME_OK)
+    private Boolean ok = false;
+    public static final String SERIALIZED_NAME_ERROR = "error";
+    @SerializedName(SERIALIZED_NAME_ERROR)
+    private ErrorResponseError error;
 
-
-  public ErrorResponse ok(Boolean ok) {
-
-    this.ok = ok;
-    return this;
-  }
-
-   /**
-   * Get ok
-   * @return ok
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getOk() {
-    return ok;
-  }
-
-
-  public void setOk(Boolean ok) {
-    this.ok = ok;
-  }
-
-
-  public ErrorResponse error(ErrorResponseError error) {
-
-    this.error = error;
-    return this;
-  }
-
-   /**
-   * Get error
-   * @return error
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public ErrorResponseError getError() {
-    return error;
-  }
-
-
-  public void setError(ErrorResponseError error) {
-    this.error = error;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+    public ErrorResponse ok(Boolean ok) {
+        this.ok = ok;
+        return this;
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    /**
+     * Get ok
+     *
+     * @return ok
+     **/
+    @javax.annotation.Nullable
+    @ApiModelProperty(value = "")
+    public Boolean getOk() {
+        return ok;
     }
-    ErrorResponse errorResponse = (ErrorResponse) o;
-    return Objects.equals(this.ok, errorResponse.ok) &&
-        Objects.equals(this.error, errorResponse.error);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(ok, error);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorResponse {\n");
-    sb.append("    ok: ").append(toIndentedString(ok)).append("\n");
-    sb.append("    error: ").append(toIndentedString(error)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public void setOk(Boolean ok) {
+        this.ok = ok;
     }
-    return o.toString().replace("\n", "\n    ");
-  }
 
+    public ErrorResponse error(ErrorResponseError error) {
+        this.error = error;
+        return this;
+    }
+
+    /**
+     * Get error
+     *
+     * @return error
+     **/
+    @javax.annotation.Nullable
+    @ApiModelProperty(value = "")
+    public ErrorResponseError getError() {
+        return error;
+    }
+
+    public void setError(ErrorResponseError error) {
+        this.error = error;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ErrorResponse errorResponse = (ErrorResponse) o;
+        return Objects.equals(this.ok, errorResponse.ok) &&
+                Objects.equals(this.error, errorResponse.error);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(ok, error);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ErrorResponse {\n");
+        sb.append("    ok: ").append(toIndentedString(ok)).append("\n");
+        sb.append("    error: ").append(toIndentedString(error)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
 }
-

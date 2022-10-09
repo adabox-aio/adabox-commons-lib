@@ -179,14 +179,11 @@ public class Deal {
         return batchRootCid;
     }
 
-
     public void setBatchRootCid(String batchRootCid) {
         this.batchRootCid = batchRootCid;
     }
 
-
     public Deal lastChange(String lastChange) {
-
         this.lastChange = lastChange;
         return this;
     }
@@ -201,14 +198,11 @@ public class Deal {
         return lastChange;
     }
 
-
     public void setLastChange(String lastChange) {
         this.lastChange = lastChange;
     }
 
-
     public Deal miner(String miner) {
-
         this.miner = miner;
         return this;
     }
@@ -244,14 +238,11 @@ public class Deal {
         return network;
     }
 
-
     public void setNetwork(NetworkEnum network) {
         this.network = network;
     }
 
-
     public Deal pieceCid(String pieceCid) {
-
         this.pieceCid = pieceCid;
         return this;
     }

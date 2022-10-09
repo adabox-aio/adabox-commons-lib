@@ -15,7 +15,7 @@ import java.util.Set;
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class ProjectDto {
 
-    private Long id;
+    private String id;
     private String name;
     private String projectUrl;
     private String description;
@@ -30,5 +30,4 @@ public class ProjectDto {
     private PricingDto pricing;
     private Set<ProjectUserDto> members;
     private Set<ProjectUserDto> pendingMembers;
-
 }

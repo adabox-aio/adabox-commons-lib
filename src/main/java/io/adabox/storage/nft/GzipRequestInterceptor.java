@@ -10,7 +10,6 @@ import java.io.IOException;
 
 /**
  * Encodes request bodies using gzip.
- *
  * Taken from https://github.com/square/okhttp/issues/350
  */
 class GzipRequestInterceptor implements Interceptor {

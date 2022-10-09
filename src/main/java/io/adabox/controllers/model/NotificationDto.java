@@ -22,4 +22,7 @@ public class NotificationDto {
     private boolean ack;
     private Date timeCreated;
     private Date timeAck;
+    private boolean acceptLoading;
+    private boolean declineLoading;
+    private String result;
 }

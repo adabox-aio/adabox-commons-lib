@@ -16,8 +16,8 @@ package io.adabox.storage.nft;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-04-29T12:41:03.666Z[GMT]")
 public class ApiException extends Exception {
+
     private int code = 0;
     private Map<String, List<String>> responseHeaders = null;
     private String responseBody = null;

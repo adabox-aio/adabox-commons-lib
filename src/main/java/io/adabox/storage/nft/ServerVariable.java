@@ -8,7 +8,7 @@ import java.util.HashSet;
 public class ServerVariable {
     public String description;
     public String defaultValue;
-    public HashSet<String> enumValues = null;
+    public HashSet<String> enumValues;
 
     /**
      * @param description A description for the server variable.

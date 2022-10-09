@@ -9,6 +9,7 @@ import java.util.Map;
  * Authentication Interface
  */
 public interface Authentication {
+
     /**
      * Apply authentication settings to header and query params.
      *

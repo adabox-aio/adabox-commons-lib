@@ -26,148 +26,141 @@ import java.util.Objects;
 /**
  * ForbiddenErrorResponseError
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-04-29T12:41:03.666Z[GMT]")
 public class ForbiddenErrorResponseError {
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name = "HTTP Error";
 
-  /**
-   * Gets or Sets message
-   */
-  @JsonAdapter(MessageEnum.Adapter.class)
-  public enum MessageEnum {
-    TOKEN_IS_NOT_VALID("Token is not valid"),
+    public static final String SERIALIZED_NAME_NAME = "name";
+    @SerializedName(SERIALIZED_NAME_NAME)
+    private String name = "HTTP Error";
 
-    SESSION_EXPIRED("Session expired");
+    /**
+     * Gets or Sets message
+     */
+    @JsonAdapter(MessageEnum.Adapter.class)
+    public enum MessageEnum {
 
-    private String value;
+        TOKEN_IS_NOT_VALID("Token is not valid"),
 
-    MessageEnum(String value) {
-      this.value = value;
+        SESSION_EXPIRED("Session expired");
+
+        private String value;
+
+        MessageEnum(String value) {
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        public static MessageEnum fromValue(String value) {
+            for (MessageEnum b : MessageEnum.values()) {
+                if (b.value.equals(value)) {
+                    return b;
+                }
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        public static class Adapter extends TypeAdapter<MessageEnum> {
+            @Override
+            public void write(final JsonWriter jsonWriter, final MessageEnum enumeration) throws IOException {
+                jsonWriter.value(enumeration.getValue());
+            }
+
+            @Override
+            public MessageEnum read(final JsonReader jsonReader) throws IOException {
+                String value = jsonReader.nextString();
+                return MessageEnum.fromValue(value);
+            }
+        }
     }
 
-    public String getValue() {
-      return value;
+    public static final String SERIALIZED_NAME_MESSAGE = "message";
+
+    @SerializedName(SERIALIZED_NAME_MESSAGE)
+    private MessageEnum message;
+
+    public ForbiddenErrorResponseError name(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return name
+     **/
+    @javax.annotation.Nullable
+    @ApiModelProperty(value = "")
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ForbiddenErrorResponseError message(MessageEnum message) {
+        this.message = message;
+        return this;
+    }
+
+    /**
+     * Get message
+     *
+     * @return message
+     **/
+    @javax.annotation.Nullable
+    @ApiModelProperty(value = "")
+    public MessageEnum getMessage() {
+        return message;
+    }
+
+    public void setMessage(MessageEnum message) {
+        this.message = message;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ForbiddenErrorResponseError forbiddenErrorResponseError = (ForbiddenErrorResponseError) o;
+        return Objects.equals(this.name, forbiddenErrorResponseError.name) &&
+                Objects.equals(this.message, forbiddenErrorResponseError.message);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, message);
     }
 
     @Override
     public String toString() {
-      return String.valueOf(value);
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ForbiddenErrorResponseError {\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("}");
+        return sb.toString();
     }
 
-    public static MessageEnum fromValue(String value) {
-      for (MessageEnum b : MessageEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(Object o) {
+        if (o == null) {
+            return "null";
         }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return o.toString().replace("\n", "\n    ");
     }
-
-    public static class Adapter extends TypeAdapter<MessageEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final MessageEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public MessageEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return MessageEnum.fromValue(value);
-      }
-    }
-  }
-
-  public static final String SERIALIZED_NAME_MESSAGE = "message";
-  @SerializedName(SERIALIZED_NAME_MESSAGE)
-  private MessageEnum message;
-
-
-  public ForbiddenErrorResponseError name(String name) {
-
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Get name
-   * @return name
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getName() {
-    return name;
-  }
-
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
-  public ForbiddenErrorResponseError message(MessageEnum message) {
-
-    this.message = message;
-    return this;
-  }
-
-   /**
-   * Get message
-   * @return message
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public MessageEnum getMessage() {
-    return message;
-  }
-
-
-  public void setMessage(MessageEnum message) {
-    this.message = message;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ForbiddenErrorResponseError forbiddenErrorResponseError = (ForbiddenErrorResponseError) o;
-    return Objects.equals(this.name, forbiddenErrorResponseError.name) &&
-        Objects.equals(this.message, forbiddenErrorResponseError.message);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(name, message);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ForbiddenErrorResponseError {\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
 }
-

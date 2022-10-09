@@ -12,7 +12,6 @@ import lombok.Setter;
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class ProjectUserDto {
 
-    private Long projectUserId;
     private ProjectMemberDto member;
     private String role;
 }

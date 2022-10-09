@@ -21,72 +21,67 @@ import java.util.Objects;
 /**
  * DeleteResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-04-29T12:41:03.666Z[GMT]")
 public class DeleteResponse {
-  public static final String SERIALIZED_NAME_OK = "ok";
-  @SerializedName(SERIALIZED_NAME_OK)
-  private Boolean ok;
 
+    public static final String SERIALIZED_NAME_OK = "ok";
+    @SerializedName(SERIALIZED_NAME_OK)
+    private Boolean ok;
 
-  public DeleteResponse ok(Boolean ok) {
+    public DeleteResponse ok(Boolean ok) {
 
-    this.ok = ok;
-    return this;
-  }
-
-   /**
-   * Get ok
-   * @return ok
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getOk() {
-    return ok;
-  }
-
-
-  public void setOk(Boolean ok) {
-    this.ok = ok;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+        this.ok = ok;
+        return this;
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    /**
+     * Get ok
+     *
+     * @return ok
+     **/
+    @javax.annotation.Nullable
+    @ApiModelProperty(value = "")
+    public Boolean getOk() {
+        return ok;
     }
-    DeleteResponse deleteResponse = (DeleteResponse) o;
-    return Objects.equals(this.ok, deleteResponse.ok);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(ok);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class DeleteResponse {\n");
-    sb.append("    ok: ").append(toIndentedString(ok)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public void setOk(Boolean ok) {
+        this.ok = ok;
     }
-    return o.toString().replace("\n", "\n    ");
-  }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        DeleteResponse deleteResponse = (DeleteResponse) o;
+        return Objects.equals(this.ok, deleteResponse.ok);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(ok);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class DeleteResponse {\n");
+        sb.append("    ok: ").append(toIndentedString(ok)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
 }
-

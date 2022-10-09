@@ -29,16 +29,14 @@ import java.util.Objects;
 /**
  * NFT
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-04-29T12:41:03.666Z[GMT]")
 public class NFT {
+
   public static final String SERIALIZED_NAME_CID = "cid";
   @SerializedName(SERIALIZED_NAME_CID)
   private String cid;
-
   public static final String SERIALIZED_NAME_SIZE = "size";
   @SerializedName(SERIALIZED_NAME_SIZE)
   private BigDecimal size = new BigDecimal("132614");
-
   public static final String SERIALIZED_NAME_CREATED = "created";
   @SerializedName(SERIALIZED_NAME_CREATED)
   private java.util.Date created;
@@ -64,7 +62,7 @@ public class NFT {
 
     OTHER_MIME_TYPES("other mime types");
 
-    private String value;
+    private final String value;
 
     TypeEnum(String value) {
       this.value = value;
@@ -122,7 +120,6 @@ public class NFT {
   @SerializedName(SERIALIZED_NAME_DEALS)
   private List<Deal> deals = null;
 
-
   public NFT cid(String cid) {
 
     this.cid = cid;
@@ -135,19 +132,15 @@ public class NFT {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(example = "bafkreidivzimqfqtoqxkrpge6bjyhlvxqs3rhe73owtmdulaxr5do5in7u", value = "Self-describing content-addressed identifiers for distributed systems. Check [spec](https://github.com/multiformats/cid) for more info.")
-
   public String getCid() {
     return cid;
   }
-
 
   public void setCid(String cid) {
     this.cid = cid;
   }
 
-
   public NFT size(BigDecimal size) {
-
     this.size = size;
     return this;
   }
@@ -158,19 +151,15 @@ public class NFT {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Size in bytes of the NFT data.")
-
   public BigDecimal getSize() {
     return size;
   }
-
 
   public void setSize(BigDecimal size) {
     this.size = size;
   }
 
-
   public NFT created(java.util.Date created) {
-
     this.created = created;
     return this;
   }
@@ -181,19 +170,15 @@ public class NFT {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public java.util.Date getCreated() {
     return created;
   }
-
 
   public void setCreated(java.util.Date created) {
     this.created = created;
   }
 
-
   public NFT type(TypeEnum type) {
-
     this.type = type;
     return this;
   }
@@ -204,19 +189,15 @@ public class NFT {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(example = "image/jpeg", value = "MIME type of the upload file or 'directory' when uploading multiple files.")
-
   public TypeEnum getType() {
     return type;
   }
-
 
   public void setType(TypeEnum type) {
     this.type = type;
   }
 
-
   public NFT scope(String scope) {
-
     this.scope = scope;
     return this;
   }
@@ -227,19 +208,15 @@ public class NFT {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Name of the JWT token used to create this NFT.")
-
   public String getScope() {
     return scope;
   }
-
 
   public void setScope(String scope) {
     this.scope = scope;
   }
 
-
   public NFT pin(Pin pin) {
-
     this.pin = pin;
     return this;
   }
@@ -250,26 +227,22 @@ public class NFT {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public Pin getPin() {
     return pin;
   }
-
 
   public void setPin(Pin pin) {
     this.pin = pin;
   }
 
-
   public NFT files(List<Object> files) {
-
     this.files = files;
     return this;
   }
 
   public NFT addFilesItem(Object filesItem) {
     if (this.files == null) {
-      this.files = new ArrayList<Object>();
+      this.files = new ArrayList<>();
     }
     this.files.add(filesItem);
     return this;
@@ -281,26 +254,22 @@ public class NFT {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Files in the directory (only if this NFT is a directory).")
-
   public List<Object> getFiles() {
     return files;
   }
-
 
   public void setFiles(List<Object> files) {
     this.files = files;
   }
 
-
   public NFT deals(List<Deal> deals) {
-
     this.deals = deals;
     return this;
   }
 
   public NFT addDealsItem(Deal dealsItem) {
     if (this.deals == null) {
-      this.deals = new ArrayList<Deal>();
+      this.deals = new ArrayList<>();
     }
     this.deals.add(dealsItem);
     return this;
@@ -312,16 +281,13 @@ public class NFT {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-
   public List<Deal> getDeals() {
     return deals;
   }
 
-
   public void setDeals(List<Deal> deals) {
     this.deals = deals;
   }
-
 
   @Override
   public boolean equals(Object o) {

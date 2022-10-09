@@ -26,49 +26,48 @@ import java.io.IOException;
 @JsonAdapter(PinStatus.Adapter.class)
 public enum PinStatus {
 
-  QUEUED("queued"),
+    QUEUED("queued"),
 
-  PINNING("pinning"),
+    PINNING("pinning"),
 
-  PINNED("pinned"),
+    PINNED("pinned"),
 
-  FAILED("failed");
+    FAILED("failed");
 
-  private String value;
+    private final String value;
 
-  PinStatus(String value) {
-    this.value = value;
-  }
-
-  public String getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  public static PinStatus fromValue(String value) {
-    for (PinStatus b : PinStatus.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
+    PinStatus(String value) {
+        this.value = value;
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
-  }
 
-  public static class Adapter extends TypeAdapter<PinStatus> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final PinStatus enumeration) throws IOException {
-      jsonWriter.value(enumeration.getValue());
+    public String getValue() {
+        return value;
     }
 
     @Override
-    public PinStatus read(final JsonReader jsonReader) throws IOException {
-      String value = jsonReader.nextString();
-      return PinStatus.fromValue(value);
+    public String toString() {
+        return String.valueOf(value);
     }
-  }
+
+    public static PinStatus fromValue(String value) {
+        for (PinStatus b : PinStatus.values()) {
+            if (b.value.equals(value)) {
+                return b;
+            }
+        }
+        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<PinStatus> {
+        @Override
+        public void write(final JsonWriter jsonWriter, final PinStatus enumeration) throws IOException {
+            jsonWriter.value(enumeration.getValue());
+        }
+
+        @Override
+        public PinStatus read(final JsonReader jsonReader) throws IOException {
+            String value = jsonReader.nextString();
+            return PinStatus.fromValue(value);
+        }
+    }
 }
-

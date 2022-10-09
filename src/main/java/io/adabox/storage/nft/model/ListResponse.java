@@ -23,109 +23,99 @@ import java.util.Objects;
 /**
  * ListResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-04-29T12:41:03.666Z[GMT]")
 public class ListResponse {
-  public static final String SERIALIZED_NAME_OK = "ok";
-  @SerializedName(SERIALIZED_NAME_OK)
-  private Boolean ok = true;
 
-  public static final String SERIALIZED_NAME_VALUE = "value";
-  @SerializedName(SERIALIZED_NAME_VALUE)
-  private List<NFT> value = null;
+    public static final String SERIALIZED_NAME_OK = "ok";
+    @SerializedName(SERIALIZED_NAME_OK)
+    private Boolean ok = true;
+    public static final String SERIALIZED_NAME_VALUE = "value";
+    @SerializedName(SERIALIZED_NAME_VALUE)
+    private List<NFT> value = null;
 
-
-  public ListResponse ok(Boolean ok) {
-
-    this.ok = ok;
-    return this;
-  }
-
-   /**
-   * Get ok
-   * @return ok
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getOk() {
-    return ok;
-  }
-
-
-  public void setOk(Boolean ok) {
-    this.ok = ok;
-  }
-
-
-  public ListResponse value(List<NFT> value) {
-
-    this.value = value;
-    return this;
-  }
-
-  public ListResponse addValueItem(NFT valueItem) {
-    if (this.value == null) {
-      this.value = new ArrayList<NFT>();
+    public ListResponse ok(Boolean ok) {
+        this.ok = ok;
+        return this;
     }
-    this.value.add(valueItem);
-    return this;
-  }
 
-   /**
-   * Get value
-   * @return value
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public List<NFT> getValue() {
-    return value;
-  }
-
-
-  public void setValue(List<NFT> value) {
-    this.value = value;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+    /**
+     * Get ok
+     *
+     * @return ok
+     **/
+    @javax.annotation.Nullable
+    @ApiModelProperty(value = "")
+    public Boolean getOk() {
+        return ok;
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    public void setOk(Boolean ok) {
+        this.ok = ok;
     }
-    ListResponse listResponse = (ListResponse) o;
-    return Objects.equals(this.ok, listResponse.ok) &&
-        Objects.equals(this.value, listResponse.value);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(ok, value);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ListResponse {\n");
-    sb.append("    ok: ").append(toIndentedString(ok)).append("\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public ListResponse value(List<NFT> value) {
+        this.value = value;
+        return this;
     }
-    return o.toString().replace("\n", "\n    ");
-  }
 
+    public ListResponse addValueItem(NFT valueItem) {
+        if (this.value == null) {
+            this.value = new ArrayList<>();
+        }
+        this.value.add(valueItem);
+        return this;
+    }
+
+    /**
+     * Get value
+     *
+     * @return value
+     **/
+    @javax.annotation.Nullable
+    @ApiModelProperty(value = "")
+    public List<NFT> getValue() {
+        return value;
+    }
+
+    public void setValue(List<NFT> value) {
+        this.value = value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ListResponse listResponse = (ListResponse) o;
+        return Objects.equals(this.ok, listResponse.ok) &&
+                Objects.equals(this.value, listResponse.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(ok, value);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ListResponse {\n");
+        sb.append("    ok: ").append(toIndentedString(ok)).append("\n");
+        sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
 }
-
