@@ -6,7 +6,7 @@
 
     <groupId>io.adabox</groupId>
     <artifactId>commons-lib</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>adabox.io Commons Library</description>
     <url>https://github.com/adabox-aio/adabox-commons-lib</url>

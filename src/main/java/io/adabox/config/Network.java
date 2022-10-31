@@ -7,6 +7,12 @@ public enum Network {
     @JsonProperty("testnet")
     TEST_NET("testnet"),
 
+    @JsonProperty("preview")
+    PREVIEW("preview"),
+
+    @JsonProperty("preprod")
+    PRE_PROD("preprod"),
+
     @JsonProperty("mainnet")
     MAIN_NET("mainnet");
 
