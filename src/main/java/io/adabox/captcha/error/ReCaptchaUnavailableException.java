@@ -1,7 +1,10 @@
 package io.adabox.captcha.error;
 
+import java.io.Serial;
+
 public final class ReCaptchaUnavailableException extends RuntimeException {
 
+    @Serial
     private static final long serialVersionUID = 5861310537366287163L;
 
     public ReCaptchaUnavailableException() {

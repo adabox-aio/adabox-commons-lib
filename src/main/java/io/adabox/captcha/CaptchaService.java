@@ -18,7 +18,10 @@ public class CaptchaService extends AbstractCaptchaService {
         final URI verifyUri = URI.create(String.format(RECAPTCHA_URL_TEMPLATE, getReCaptchaSecret(), response, getClientIP()));
         try {
             final GoogleResponse googleResponse = restTemplate.getForObject(verifyUri, GoogleResponse.class);
-            log.debug("Google's response: {} ", googleResponse.toString());
+            if (googleResponse == null) {
+                throw new ReCaptchaInvalidException("Google Response is null!");
+            }
+            log.debug("Google's response: {} ", googleResponse);
             if (!googleResponse.isSuccess()) {
                 if (googleResponse.hasClientError()) {
                     reCaptchaAttemptService.reCaptchaFailed(getClientIP());

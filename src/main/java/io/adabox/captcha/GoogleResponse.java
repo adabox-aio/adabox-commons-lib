@@ -1,11 +1,13 @@
 package io.adabox.captcha;
 
 import com.fasterxml.jackson.annotation.*;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+@Slf4j
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonPropertyOrder({ "success", "score", "action","challenge_ts", "hostname", "error-codes" })
@@ -25,19 +27,19 @@ public class GoogleResponse {
     private ErrorCode[] errorCodes;
 
     enum ErrorCode {
-        IncorrectCaptchaSol, InvalidKeys, MissingSecret, InvalidSecret, MissingResponse, InvalidResponse, BadRequest, TimeoutOrDuplicate;
+        INCORRECT_CAPTCHA_SOL, INVALID_KEYS, MISSING_SECRET, INVALID_SECRET, MISSING_RESPONSE, INVALID_RESPONSE, BAD_REQUEST, TIMEOUT_OR_DUPLICATE;
 
         private static final Map<String, ErrorCode> errorsMap = new HashMap<>(6);
 
         static {
-            errorsMap.put("incorrect-captcha-sol", IncorrectCaptchaSol);
-            errorsMap.put("invalid-keys", InvalidKeys);
-            errorsMap.put("missing-input-secret", MissingSecret);
-            errorsMap.put("invalid-input-secret", InvalidSecret);
-            errorsMap.put("missing-input-response", MissingResponse);
-            errorsMap.put("bad-request", InvalidResponse);
-            errorsMap.put("invalid-input-response", BadRequest);
-            errorsMap.put("timeout-or-duplicate", TimeoutOrDuplicate);
+            errorsMap.put("incorrect-captcha-sol", INCORRECT_CAPTCHA_SOL);
+            errorsMap.put("invalid-keys", INVALID_KEYS);
+            errorsMap.put("missing-input-secret", MISSING_SECRET);
+            errorsMap.put("invalid-input-secret", INVALID_SECRET);
+            errorsMap.put("missing-input-response", MISSING_RESPONSE);
+            errorsMap.put("bad-request", INVALID_RESPONSE);
+            errorsMap.put("invalid-input-response", BAD_REQUEST);
+            errorsMap.put("timeout-or-duplicate", TIMEOUT_OR_DUPLICATE);
         }
 
         @JsonCreator
@@ -114,14 +116,29 @@ public class GoogleResponse {
         }
         for (final ErrorCode error : errors) {
             switch (error) {
-                case IncorrectCaptchaSol:
-                case InvalidKeys:
-                case InvalidResponse:
-                case MissingResponse:
-                case BadRequest:
+                case INCORRECT_CAPTCHA_SOL -> {
+                    log.warn("Incorrect Captcha");
                     return true;
-                default:
-                    break;
+                }
+                case INVALID_KEYS -> {
+                    log.warn("Invalid Keys");
+                    return true;
+                }
+                case INVALID_RESPONSE -> {
+                    log.warn("Invalid Response");
+                    return true;
+                }
+                case MISSING_RESPONSE -> {
+                    log.warn("Missing Response");
+                    return true;
+                }
+                case BAD_REQUEST -> {
+                    log.warn("Bad Request");
+                    return true;
+                }
+                default -> {
+                    // empty
+                }
             }
         }
         return false;
