@@ -6,7 +6,7 @@
 
     <groupId>io.adabox</groupId>
     <artifactId>commons-lib</artifactId>
-    <version>1.1.10</version>
+    <version>1.1.11</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>adabox.io Commons Library</description>
     <url>https://github.com/adabox-aio/adabox-commons-lib</url>
@@ -14,7 +14,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.8</version>
+        <version>2.7.9</version>
         <relativePath/>
     </parent>
 
@@ -25,10 +25,6 @@
         <cardano-client-lib.version>0.4.3</cardano-client-lib.version>
         <annotations.version>23.1.0</annotations.version>
         <guava.version>31.1-jre</guava.version>
-        <swagger-annotations.version>1.6.8</swagger-annotations.version>
-        <gson-fire.version>1.8.5</gson-fire.version>
-        <threetenbp.version>1.6.5</threetenbp.version>
-        <logging-interceptor.version>4.10.0</logging-interceptor.version>
         <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
@@ -78,21 +74,6 @@
             <artifactId>annotations</artifactId>
             <version>${annotations.version}</version>
             <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.swagger</groupId>
-            <artifactId>swagger-annotations</artifactId>
-            <version>${swagger-annotations.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.gsonfire</groupId>
-            <artifactId>gson-fire</artifactId>
-            <version>${gson-fire.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.threeten</groupId>
-            <artifactId>threetenbp</artifactId>
-            <version>${threetenbp.version}</version>
         </dependency>
     </dependencies>
 

@@ -27,7 +27,7 @@ public class GoogleResponse {
     private ErrorCode[] errorCodes;
 
     enum ErrorCode {
-        INCORRECT_CAPTCHA_SOL, INVALID_KEYS, MISSING_SECRET, INVALID_SECRET, MISSING_RESPONSE, INVALID_RESPONSE, BAD_REQUEST, TIMEOUT_OR_DUPLICATE;
+        INCORRECT_CAPTCHA_SOL, INVALID_KEYS, MISSING_SECRET, INVALID_SECRET, MISSING_RESPONSE, INVALID_RESPONSE, BAD_REQUEST, TIMEOUT_OR_DUPLICATE, BROWSER_ERROR;
 
         private static final Map<String, ErrorCode> errorsMap = new HashMap<>(6);
 
@@ -40,6 +40,7 @@ public class GoogleResponse {
             errorsMap.put("bad-request", INVALID_RESPONSE);
             errorsMap.put("invalid-input-response", BAD_REQUEST);
             errorsMap.put("timeout-or-duplicate", TIMEOUT_OR_DUPLICATE);
+            errorsMap.put("browser-error", BROWSER_ERROR);
         }
 
         @JsonCreator
@@ -134,6 +135,10 @@ public class GoogleResponse {
                 }
                 case BAD_REQUEST -> {
                     log.warn("Bad Request");
+                    return true;
+                }
+                case BROWSER_ERROR -> {
+                    log.warn("Browser Error");
                     return true;
                 }
                 default -> {
