@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public enum Network {
 
-    @JsonProperty("testnet")
-    TEST_NET("testnet"),
-
     @JsonProperty("preview")
     PREVIEW("preview"),
 
@@ -28,7 +25,7 @@ public enum Network {
                 return network;
             }
         }
-        return TEST_NET;
+        return PREVIEW;
     }
 
     public String getValue() {
