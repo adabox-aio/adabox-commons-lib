@@ -2,7 +2,12 @@ package io.adabox.config;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Arrays;
+
 public enum Network {
+
+    @JsonProperty("undefined")
+    UNDEFINED("N/A"),
 
     @JsonProperty("preview")
     PREVIEW("preview"),
@@ -20,12 +25,10 @@ public enum Network {
     }
 
     public static Network fromString(String value) {
-        for (Network network : Network.values()) {
-            if (network.getValue().equalsIgnoreCase(value)) {
-                return network;
-            }
-        }
-        return PREVIEW;
+        return Arrays.stream(Network.values())
+                .filter(network -> network.getValue().equalsIgnoreCase(value))
+                .findFirst()
+                .orElse(UNDEFINED);
     }
 
     public String getValue() {
